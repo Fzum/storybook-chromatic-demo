@@ -9,26 +9,48 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
     <button
       type="button"
       (click)="handleClick($event)"
-      class="inline-block cursor-pointer rounded-full font-bold leading-none font-sans"
-      [class.bg-blue-600]="primary()"
-      [class.text-white]="primary()"
-      [class.shadow-inner]="!primary()"
-      [class.bg-transparent]="!primary()"
-      [class.text-gray-800]="!primary()"
-      [class.px-4]="size() === 'small'"
-      [class.py-2.5]="size() === 'small'"
-      [class.text-xs]="size() === 'small'"
-      [class.px-5]="size() === 'medium'"
-      [class.py-3]="size() === 'medium'"
-      [class.text-sm]="size() === 'medium'"
-      [class.px-6]="size() === 'large'"
-      [class.py-3.5]="size() === 'large'"
-      [class.text-base]="size() === 'large'"
+      [ngClass]="getButtonClasses()"
       [style.backgroundColor]="backgroundColor()"
     >
       {{ label() }}
     </button>
   `,
+  styles: [`
+    button {
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 9999px;
+      font-weight: bold;
+      line-height: 1;
+      font-family: sans-serif;
+    }
+
+    .primary {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .secondary {
+      background-color: transparent;
+      color: #1f2937;
+      box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .small {
+      padding: 0.625rem 1rem;
+      font-size: 0.75rem;
+    }
+
+    .medium {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    .large {
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+    }
+  `],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
@@ -46,6 +68,16 @@ export class ButtonComponent {
 
   /** Optional click handler */
   clicked = output<Event>();
+
+  getButtonClasses(): { [key: string]: boolean } {
+    return {
+      'primary': this.primary(),
+      'secondary': !this.primary(),
+      'small': this.size() === 'small',
+      'medium': this.size() === 'medium',
+      'large': this.size() === 'large'
+    };
+  }
 
   handleClick(event: Event): void {
     this.clicked.emit(event);
