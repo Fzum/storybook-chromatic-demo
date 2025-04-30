@@ -84,6 +84,109 @@
             "templateData": "<h1>\n  Hello world!\n</h1>\n"
         },
         {
+            "name": "BadgeComponent",
+            "id": "component-BadgeComponent-3c3aefb41b91ca300d64ea04e242ac22125832dc9b25bb80392bed30ae45387b57c468ab587bf29dbe2a1c737f91f62d6935653c8d55f6ec5061d9dd3e55b2f1",
+            "file": "src/ui-components/badge/badge.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-badge",
+            "styleUrls": [],
+            "styles": [
+                "\n    span {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      border-radius: 9999px;\n      font-weight: 500;\n      line-height: 1;\n      font-family: sans-serif;\n      white-space: nowrap;\n    }\n\n    .success {\n      background-color: #10B981;\n      color: white;\n    }\n\n    .warning {\n      background-color: #F59E0B;\n      color: white;\n    }\n\n    .error {\n      background-color: #EF4444;\n      color: white;\n    }\n\n    .info {\n      background-color: #3B82F6;\n      color: white;\n    }\n\n    .default {\n      background-color: #9CA3AF;\n      color: white;\n    }\n\n    .small {\n      padding: 0.125rem 0.5rem;\n      font-size: 0.625rem;\n    }\n\n    .medium {\n      padding: 0.25rem 0.75rem;\n      font-size: 0.75rem;\n    }\n\n    .large {\n      padding: 0.375rem 1rem;\n      font-size: 0.875rem;\n    }\n  "
+            ],
+            "template": "<span\n  [ngClass]=\"getBadgeClasses()\"\n  [style.backgroundColor]=\"backgroundColor()\"\n>\n  {{ label() }}\n</span>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "backgroundColor",
+                    "defaultValue": "input<string | undefined>(undefined)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>What background color to use (overrides variant color)</p>\n",
+                    "line": 75,
+                    "rawdescription": "\nWhat background color to use (overrides variant color)"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "input('Badge')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Badge contents</p>\n",
+                    "line": 81,
+                    "rawdescription": "\nBadge contents"
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "input<'small' | 'medium' | 'large'>('medium')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>How large should the badge be?</p>\n",
+                    "line": 78,
+                    "rawdescription": "\nHow large should the badge be?"
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "input<'default' | 'success' | 'warning' | 'error' | 'info'>('default')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>The variant/type of the badge</p>\n",
+                    "line": 72,
+                    "rawdescription": "\nThe variant/type of the badge"
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getBadgeClasses",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "literal type",
+                    "typeParameters": [],
+                    "line": 83,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { ChangeDetectionStrategy, Component, input } from '@angular/core';\n\n@Component({\n  selector: 'ui-badge',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <span\n      [ngClass]=\"getBadgeClasses()\"\n      [style.backgroundColor]=\"backgroundColor()\"\n    >\n      {{ label() }}\n    </span>\n  `,\n  styles: [`\n    span {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      border-radius: 9999px;\n      font-weight: 500;\n      line-height: 1;\n      font-family: sans-serif;\n      white-space: nowrap;\n    }\n\n    .success {\n      background-color: #10B981;\n      color: white;\n    }\n\n    .warning {\n      background-color: #F59E0B;\n      color: white;\n    }\n\n    .error {\n      background-color: #EF4444;\n      color: white;\n    }\n\n    .info {\n      background-color: #3B82F6;\n      color: white;\n    }\n\n    .default {\n      background-color: #9CA3AF;\n      color: white;\n    }\n\n    .small {\n      padding: 0.125rem 0.5rem;\n      font-size: 0.625rem;\n    }\n\n    .medium {\n      padding: 0.25rem 0.75rem;\n      font-size: 0.75rem;\n    }\n\n    .large {\n      padding: 0.375rem 1rem;\n      font-size: 0.875rem;\n    }\n  `],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class BadgeComponent {\n  /** The variant/type of the badge */\n  variant = input<'default' | 'success' | 'warning' | 'error' | 'info'>('default');\n\n  /** What background color to use (overrides variant color) */\n  backgroundColor = input<string | undefined>(undefined);\n\n  /** How large should the badge be? */\n  size = input<'small' | 'medium' | 'large'>('medium');\n\n  /** Badge contents */\n  label = input('Badge');\n\n  getBadgeClasses(): { [key: string]: boolean } {\n    return {\n      'success': this.variant() === 'success',\n      'warning': this.variant() === 'warning',\n      'error': this.variant() === 'error',\n      'info': this.variant() === 'info',\n      'default': this.variant() === 'default',\n      'small': this.size() === 'small',\n      'medium': this.size() === 'medium',\n      'large': this.size() === 'large'\n    };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n    span {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      border-radius: 9999px;\n      font-weight: 500;\n      line-height: 1;\n      font-family: sans-serif;\n      white-space: nowrap;\n    }\n\n    .success {\n      background-color: #10B981;\n      color: white;\n    }\n\n    .warning {\n      background-color: #F59E0B;\n      color: white;\n    }\n\n    .error {\n      background-color: #EF4444;\n      color: white;\n    }\n\n    .info {\n      background-color: #3B82F6;\n      color: white;\n    }\n\n    .default {\n      background-color: #9CA3AF;\n      color: white;\n    }\n\n    .small {\n      padding: 0.125rem 0.5rem;\n      font-size: 0.625rem;\n    }\n\n    .medium {\n      padding: 0.25rem 0.75rem;\n      font-size: 0.75rem;\n    }\n\n    .large {\n      padding: 0.375rem 1rem;\n      font-size: 0.875rem;\n    }\n  \n",
+            "extends": []
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
             "file": "src/stories/button.component.ts",
@@ -609,8 +712,8 @@
     },
     "routes": [],
     "coverage": {
-        "count": 21,
-        "status": "low",
+        "count": 27,
+        "status": "medium",
         "files": [
             {
                 "filePath": "src/app/app.component.ts",
@@ -666,6 +769,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
+            },
+            {
+                "filePath": "src/ui-components/badge/badge.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BadgeComponent",
+                "coveragePercent": 66,
+                "coverageCount": "4/6",
+                "status": "good"
             },
             {
                 "filePath": "src/ui-components/button/button.component.ts",
