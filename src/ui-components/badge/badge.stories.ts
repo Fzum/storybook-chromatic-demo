@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import type {Meta, StoryObj} from '@storybook/angular';
 
-import { BadgeComponent } from './badge.component';
+import {BadgeComponent} from './badge.component';
 
 const meta: Meta<BadgeComponent> = {
   title: 'UI/Badge',
@@ -10,6 +10,29 @@ const meta: Meta<BadgeComponent> = {
     backgroundColor: {
       control: 'color',
     },
+    variant: {
+      control: 'select',
+      options: ['default', 'success', 'warning', 'error', 'info'],
+      description: 'Badge variant style',
+      table: {
+        defaultValue: {summary: 'default'},
+      }
+    },
+    size: {
+      control: 'radio',
+      options: ['small', 'medium', 'large'],
+      description: 'Badge size',
+      table: {
+        defaultValue: {summary: 'medium'},
+      }
+    },
+    label: {
+      control: 'text',
+      description: 'Badge text content',
+      table: {
+        defaultValue: {summary: 'Badge'},
+      }
+    }
   },
 };
 
