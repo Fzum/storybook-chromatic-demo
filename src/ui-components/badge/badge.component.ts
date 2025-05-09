@@ -31,7 +31,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     }
 
     .warning {
-      background-color: #ed6e0f;
+      background-color: #ed430f;
       color: white;
     }
 
