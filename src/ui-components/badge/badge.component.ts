@@ -26,22 +26,22 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     }
 
     .success {
-      background-color: #10B981;
+      background-color: #09a873;
       color: white;
     }
 
     .warning {
-      background-color: #F59E0B;
+      background-color: #ed6e0f;
       color: white;
     }
 
     .error {
-      background-color: #EF4444;
+      background-color: #b30000;
       color: white;
     }
 
     .info {
-      background-color: #3B82F6;
+      background-color: #004ddf;
       color: white;
     }
 
