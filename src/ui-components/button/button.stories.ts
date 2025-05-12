@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from '@storybook/test';
+import type {Meta, StoryObj} from '@storybook/angular';
+import {fn} from '@storybook/test';
 
-import { ButtonComponent } from './button.component';
+import {ButtonComponent} from './button.component';
 
 const meta: Meta<ButtonComponent> = {
   title: 'UI/Button',
@@ -11,9 +11,9 @@ const meta: Meta<ButtonComponent> = {
     backgroundColor: {
       control: 'color',
     },
-    clicked: { action: 'clicked' },
+    clicked: {action: 'clicked'},
   },
-  args: { clicked: fn() },
+  args: {clicked: fn()},
 };
 
 export default meta;
@@ -21,14 +21,16 @@ type Story = StoryObj<ButtonComponent>;
 
 export const Primary: Story = {
   args: {
+    backgroundColor: "blue",
     primary: true,
-    label: 'Button',
+    label: 'Primary Button',
     clicked: fn(),
   },
 };
 
 export const Secondary: Story = {
   args: {
+    backgroundColor: "gray",
     label: 'Button',
     clicked: fn(),
   },
