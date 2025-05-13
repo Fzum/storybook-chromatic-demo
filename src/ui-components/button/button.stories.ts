@@ -51,12 +51,3 @@ export const Small: Story = {
     clicked: fn(),
   },
 };
-
-export const FabianButton: Story = {
-  args: {
-    backgroundColor: "yellow",
-    size: "large",
-    primary: true,
-    label: "Fabian Button"
-  }
-};
