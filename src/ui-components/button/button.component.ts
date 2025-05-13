@@ -26,12 +26,12 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
     }
 
     .primary {
-      background-color: #0e61dc;
+      background-color: #b30000;
       color: #FFFFFF;
     }
 
     .secondary {
-      background-color: #303c4e;
+      background-color: #f89f5b;
       color: #FFFFFF; /* Gold */
       box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     }

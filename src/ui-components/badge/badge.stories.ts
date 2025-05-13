@@ -101,3 +101,12 @@ export const CustomColor: Story = {
     label: 'Custom',
   },
 };
+
+export const PinkBadge: Story = {
+  args: {
+    variant: "default",
+    label: "Pink Badge",
+    backgroundColor: "#ef009e",
+    size: "large"
+  }
+};
