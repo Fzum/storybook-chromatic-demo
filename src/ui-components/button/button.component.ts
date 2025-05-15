@@ -26,7 +26,7 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
     }
 
     .primary {
-      background-color: #b30000;
+      background-color: #09a873;
       color: #FFFFFF;
     }
 
